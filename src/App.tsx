@@ -44,7 +44,8 @@ const Icons = {
   ),
 };
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const rawApiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL = rawApiUrl.trim().replace(/\/+$/, "");
 
 type TabType = 'schools' | 'classes' | 'teachers' | 'students';
 
